@@ -1,0 +1,8 @@
+services:
+  mongo:
+    image: mongo:8
+  api:
+    build: .
+    ports: ["3000:3000"]
+    environment: {MONGO_URL: mongodb://mongo:27017/transformer}
+    depends_on: [mongo]
