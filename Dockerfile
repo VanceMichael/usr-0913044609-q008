@@ -1,7 +1,7 @@
 FROM node:22-alpine
 WORKDIR /srv
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 COPY tsconfig.json ./
 COPY src ./src
 COPY test ./test
